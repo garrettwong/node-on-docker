@@ -17,8 +17,4 @@ Running on http://localhost:8080
 
 $ docker exec it <container id> /bin/bash
 
-
-
-
-
-open localhost:49160
+$ open localhost:49160
