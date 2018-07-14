@@ -22,4 +22,6 @@ $ open localhost:49160
 
 
 # On push to master, a trigger creation of a docker image via GCP Build Triggers
+## A build trigger has been added at the project path: cloud-build/builds
+## This will create an image in the gcr.io project container registry
 $ git push -u origin master
