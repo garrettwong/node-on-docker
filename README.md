@@ -18,3 +18,8 @@ Running on http://localhost:8080
 $ docker exec it <container id> /bin/bash
 
 $ open localhost:49160
+
+
+
+# On push to master, a trigger creation of a docker image via GCP Build Triggers
+$ git push -u origin master
