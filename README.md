@@ -26,4 +26,3 @@ $ open localhost:49160
 ## This will create an image in the gcr.io project container registry
 $ git push -u origin master
 
-
