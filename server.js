@@ -9,28 +9,36 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+app.set('view engine', 'pug');
+app.use(express.static('public')); // images,css,etc.
+
+function getRandomId() {
+  let randomDouble = (Math.random() * 3) + 2; // generate between [2,4] inclusive
+  return Math.floor(randomDouble);
+}
+
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  let id = getRandomId();
+  res.render('index', {
+    title: `Hi Q${id}`
+  });
 });
 
-app.get('/home', function(req, res) {
+app.get('/home', function (req, res) {
   res.send('GET home');
 });
 
-app.post('/home', function(req, res) {
+app.post('/home', function (req, res) {
   res.send('POST home');
 });
 
-app.get('/q', function(req, res) {
+app.get('/q', function (req, res) {
   var id = // get random
-    (function () { 
-      let randomDouble = (Math.random()*4)+1;
-      return Math.floor(randomDouble);
-    })();
+    getRandomId();
   res.send(`Hello Q${id}`);
 });
 
-app.get('/q/:id', function(req, res) {
+app.get('/q/:id', function (req, res) {
   var id = req.params.id;
   res.send(`Hello Q${id}`);
 });
