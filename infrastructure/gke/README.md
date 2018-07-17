@@ -2,3 +2,7 @@
 
 ### Notes 
 - Make sure to enable "Legacy Authorization" on GCP Kubernetes Cluster >> Edit
+
+
+# Kubernetes Deployment URL
+[https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#create-21]
