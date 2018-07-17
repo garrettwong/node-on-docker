@@ -2,6 +2,11 @@
 
 Tutorial Reference:
 - https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+- https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
+
+Pre-requisites:
+- docker 18.05 (download from docker site online)
+- kubectl 1.9.7 (download using gcloud components install kubectl)
 
 docker images
 docker run -p 49160:8080 -d garrettwong/test-tracker
