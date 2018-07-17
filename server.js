@@ -22,7 +22,12 @@ app.post('/home', function(req, res) {
 });
 
 app.get('/q', function(req, res) {
-  res.send('Hello Q');
+  var id = // get random
+    (function () { 
+      let randomDouble = (Math.random()*4)+1;
+      return Math.floor(randomDouble);
+    })();
+  res.send(`Hello Q${id}`);
 });
 
 app.get('/q/:id', function(req, res) {
