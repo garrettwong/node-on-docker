@@ -21,6 +21,15 @@ app.post('/home', function(req, res) {
   res.send('POST home');
 });
 
+app.get('/q', function(req, res) {
+  res.send('Hello Q');
+});
+
+app.get('/q/:id', function(req, res) {
+  var id = req.params.id;
+  res.send(`Hello Q${id}`);
+});
+
 
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
