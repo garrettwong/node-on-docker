@@ -1,7 +1,36 @@
 html
   head
     title= title
-  body
-    h1= title
 
-    img(src="/q.jpg")
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css', rel='stylesheet')
+    
+  body
+
+    div(class="container")
+        h1(class='button') #{title},
+
+        div(class="row")
+            div(class="col s12 m6")
+                div(class="card blue-grey darken-1")
+                    div(class="card-content white-text")
+                        span(class="card-title") Hi
+                        p I am a lonely fellow
+                        img(src="/q.jpg")
+                    div(class="card-action")
+                        a(href="#") 'I miss you guys!!! I have a new sister, SeQi, she is excited to meet you too, brothers!'
+
+            div(class="col s12 m6")            
+                div(class="card-panel")
+                    ul(class="collection")
+                        each val in [2,3,4]
+                            li(class="collection-item avatar") 
+                                img(src="/q.jpg", class="circle", style={height: '32px', width: '32px'}) 
+                                span(class="title") Q#{val}
+                                p Hi Q#{val}
+                                    br
+                                a(href="#!" class="secondary-content")
+                                    i(class="material-icons") grade
+
+                    
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js")

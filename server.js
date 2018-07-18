@@ -13,14 +13,22 @@ app.set('view engine', 'pug');
 app.use(express.static('public')); // images,css,etc.
 
 function getRandomId() {
-  let randomDouble = (Math.random() * 3) + 2; // generate between [2,4] inclusive
-  return Math.floor(randomDouble);
+  let randomDouble = (Math.random() * 5) + 1; // generate between [1,5] inclusive
+  let randomInt = Math.floor(randomDouble);
+  
+  return randomInt;
+}
+function getRandomName() {
+  let randomId = getRandomId();
+  if (randomId === 1) return 'Mommy';
+  if (randomId === 5) return 'SeQi';
+  else return `Q${randomId}`;
 }
 
 app.get('/', (req, res) => {
-  let id = getRandomId();
+  let name = getRandomName();
   res.render('index', {
-    title: `Hi Q${id}`
+    title: `Hi ${name}`
   });
 });
 
@@ -33,13 +41,12 @@ app.post('/home', function (req, res) {
 });
 
 app.get('/q', function (req, res) {
-  var id = // get random
-    getRandomId();
-  res.send(`Hello Q${id}`);
+  var name = getRandomName();
+  res.send(`Hello ${name}`);
 });
 
 app.get('/q/:id', function (req, res) {
-  var id = req.params.id;
+  let id = req.params.id;
   res.send(`Hello Q${id}`);
 });
 
