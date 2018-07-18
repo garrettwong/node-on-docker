@@ -3,7 +3,7 @@
 export PROJECT_ID="$(gcloud config get-value project -q)"
 export APP_NAME="nodedocker"
 export DEPLOYMENT_NAME="nodedocker-web"
-export VERSION="v8"
+export VERSION="v10"
 
 docker build -t gcr.io/${PROJECT_ID}/${APP_NAME}:${VERSION} .
 

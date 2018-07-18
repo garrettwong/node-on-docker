@@ -16,7 +16,7 @@ html
                     div(class="card-content white-text")
                         span(class="card-title") Hi
                         p I am a lonely fellow
-                        img(src="/q.jpg")
+                        img(src="/images/q.jpg")
                     div(class="card-action")
                         a(href="#") 'I miss you guys!!! I have a new sister, SeQi, she is excited to meet you too, brothers!'
 
@@ -25,12 +25,26 @@ html
                     ul(class="collection")
                         each val in [2,3,4]
                             li(class="collection-item avatar") 
-                                img(src="/q.jpg", class="circle", style={height: '32px', width: '32px'}) 
+                                img(src="/images/q.jpg", class="circle", style={height: '32px', width: '32px'}) 
                                 span(class="title") Q#{val}
                                 p Hi Q#{val}
                                     br
                                 a(href="#!" class="secondary-content")
                                     i(class="material-icons") grade
+        
+        // carousel - campfire
+        div(class="row")
+            div(class="col s12 m6")
+                div(class="carousel")
+                    a(class="carousel-item", href="#one!")
+                        img(src="/images/q.jpg")
+                    a(class="carousel-item", href="#one!")
+                        img(src="/images/cardboard_q.jpg")
+                    a(class="carousel-item", href="#one!")
+                        img(src="/images/grill_fire.jpg")
+                    a(class="carousel-item", href="#one!")
+                        img(src="/images/cool_q.jpg")
 
-                    
+
     script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js")
+    script(src="scripts/carousel.js")
