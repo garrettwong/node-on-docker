@@ -9,7 +9,7 @@ Pre-requisites:
 - kubectl 1.9.7 (download using gcloud components install kubectl)
 
 docker images
-docker run -p 49160:8080 -d garrettwong/test-tracker
+docker run -p 49160:8080 -d garrettwong/NodeDocker
 
 # Get container ID
 $ docker ps
