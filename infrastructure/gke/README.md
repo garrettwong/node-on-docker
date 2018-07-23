@@ -22,5 +22,6 @@ https://blog.heptio.com/using-kubectl-to-jumpstart-a-yaml-file-heptioprotip-6f5b
 * https://www.mirantis.com/blog/introduction-to-yaml-creating-a-kubernetes-deployment/
 * https://github.com/kubernetes/charts/tree/master/stable/
 
+
 #### Delete Pod in Cluster:
     * $ gcloud container clusters get-credentials k8s-spinnaker --zone us-central1-a --project pso-jretelny-demo1-spinnaker  && kubectl delete deployment rss-site-v000 --namespace spinnaker

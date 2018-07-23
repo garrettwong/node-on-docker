@@ -32,8 +32,10 @@ html
                                 a(href="#!" class="secondary-content")
                                     i(class="material-icons") grade
         
-        // carousel - campfire
+        
         div(class="row")
+
+            // carousel
             div(class="col s12 m6")
                 div(class="carousel")
                     a(class="carousel-item", href="#one!")
@@ -45,6 +47,18 @@ html
                     a(class="carousel-item", href="#one!")
                         img(src="/images/cool_q.jpg")
 
+            // q-zone button
+            div(class="col s12 m6")
+                button(class="btn", id="open-menu-btn") Open
+
+                a(id="menu", class="waves-effect waves-light btn btn-floating")
+                    i(class="material-icons") menu
+
+                div(class="tap-target", data-target="menu")
+                    div(class="tap-target-content")
+                        p Q zone is a fun place to be
+                        img(src="/images/cool_q.jpg", style={height: '96px', width: '96px'})
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js")
     script(src="scripts/carousel.js")
+    script(src="scripts/q-zone.js")

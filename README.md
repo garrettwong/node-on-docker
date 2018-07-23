@@ -21,8 +21,8 @@ infrastructure/docker_run.sh
 
 * Deploy to GKE Cluster
 ```bash
-# you need to manually bump the version
-
+# gcloud auth login --activate-service-account ${...}
+gcloud container clusters get-credentials nodedocker-cluster
 infrastructure/gke/deploy_new_version.sh
 ```
 
