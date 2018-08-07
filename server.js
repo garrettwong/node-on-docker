@@ -3,53 +3,35 @@
 // express 4.0
 const express = require('express');
 
-// Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
+import api from './server/api';
+import config from './server/config.json';
+import RandomService from './server/lib/random-service';
 
-// App
+// setup app
 const app = express();
 app.set('view engine', 'pug');
 app.use(express.static('public')); // images,css,etc.
 
-function getRandomId() {
-  let randomDouble = (Math.random() * 5) + 1; // generate between [1,5] inclusive
-  let randomInt = Math.floor(randomDouble);
-  
-  return randomInt;
-}
-function getRandomName() {
-  let randomId = getRandomId();
-  if (randomId === 1) return 'Mommy';
-  if (randomId === 5) return 'SeQi';
-  else return `Q${randomId}`;
-}
+// set up /api routes
+app.use('/api', api({ config }));
 
+// set up / main route
 app.get('/', (req, res) => {
-  let name = getRandomName();
+  let name = RandomService.getRandomName();
   res.render('index', {
     title: `Hi ${name}`
   });
 });
 
+// test routes
 app.get('/home', function (req, res) {
-  res.send('GET home');
+  res.send('GET: ' + req.url);
 });
 
 app.post('/home', function (req, res) {
-  res.send('POST home');
+  res.send('POST: ' + req.url);
 });
 
-app.get('/q', function (req, res) {
-  var name = getRandomName();
-  res.send(`Hello ${name}`);
-});
-
-app.get('/q/:id', function (req, res) {
-  let id = req.params.id;
-  res.send(`Hello Q${id}`);
-});
-
-
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+// initialize app
+app.listen(config.port, config.host);
+console.log(`Running on http://${config.host}:${config.port}`);

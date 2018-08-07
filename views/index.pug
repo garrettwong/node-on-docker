@@ -18,7 +18,7 @@ html
                         p I am a lonely fellow
                         img(src="/images/q.jpg")
                     div(class="card-action")
-                        a(href="#") 'I miss you guys!!! I have a new sister, SeQi, she is excited to meet you too, brothers!'
+                        a(href="#") 'I miss you guys!!! I have a new sister, SeQi, she is excited to meet you too, brothers!' Made it home!!!
 
             div(class="col s12 m6")            
                 div(class="card-panel")
@@ -29,9 +29,21 @@ html
                                 span(class="title") Q#{val}
                                 p Hi Q#{val}
                                     br
-                                a(href="#!" class="secondary-content")
-                                    i(class="material-icons") grade
-        
+                                a(href="#!/Q/" + val, class="secondary-content modal-trigger", data-target="modal1")
+                                    i(class="material-icons", data-target="modal1") grade 
+
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        h4 Dear Q
+                            span(id="q-num")
+
+                        p My message to you:
+                        textarea(id="text-to-associate", style={height: '150px', 'margin-bottom': '10px'})
+                        
+                        button(class="btn", id="submit-text") Send!
+                    </div>
+                </div>
+                    
         
         div(class="row")
 
@@ -57,8 +69,10 @@ html
                 div(class="tap-target", data-target="menu")
                     div(class="tap-target-content")
                         p Q zone is a fun place to be
-                        img(src="/images/cool_q.jpg", style={height: '96px', width: '96px'})
+                        img(src="/images/roger.jpg", style={height: '96px', width: '96px'})
 
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js")
     script(src="scripts/carousel.js")
     script(src="scripts/q-zone.js")
+    script(src="scripts/q-modal.js")

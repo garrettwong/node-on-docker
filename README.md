@@ -22,7 +22,9 @@ infrastructure/docker_run.sh
 * Deploy to GKE Cluster
 ```bash
 # gcloud auth login --activate-service-account ${...}
-gcloud container clusters get-credentials nodedocker-cluster
+
+CLUSTER_NAME=nodedocker-cluster # fill this in with your GKE cluster name
+gcloud container clusters get-credentials $CLUSTER_NAME
 infrastructure/gke/deploy_new_version.sh
 ```
 
