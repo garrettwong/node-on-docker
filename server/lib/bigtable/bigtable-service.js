@@ -1,3 +1,13 @@
+/* 
+  Bigtable Reference: 
+    https://cloud.google.com/bigtable/docs/overview
+
+  Bigtable node.js reference: 
+    https://github.com/googleapis/nodejs-bigtable
+
+  @author garrettwong
+*/
+
 const Bigtable = require('@google-cloud/bigtable');
 
 const TABLE_NAME = 'my-table2';
@@ -99,6 +109,7 @@ async function addRow_test() {
 
   table.insert(rowsToInsert);
 }
+
 async function addRow(key, data) {
   let table = await getTable();
   

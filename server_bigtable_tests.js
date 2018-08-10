@@ -14,7 +14,7 @@ console.log('//============================= end BigTableService API\n');
 
 
 // ADD ROW
-let key = 'key1';
+let key = 'rowKey1';
 let data = 'Hello Garrett!';
 
 console.log(`AddRow: Adding Row with key: ${key} and data: ${data}`);
