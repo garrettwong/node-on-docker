@@ -8,7 +8,9 @@
     "dev": "nodemon -w src --exec \"babel-node server --presets es2015,stage-0\"",
     "build": "babel src -s -D -d dist --presets es2015,stage-0",
     "start": "nodemon -w src --exec \"babel-node server --presets es2015,stage-0\"",
-    "test": "eslint src"
+    "test": "eslint src",
+
+    "server_bigtable_tests": "nodemon -w src --exec \"babel-node server_bigtable_tests --presets es2015,stage-0\""
   },
   "eslintConfig": {
     "extends": "eslint:recommended",

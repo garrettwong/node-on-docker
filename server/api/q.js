@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import RandomService from '../lib/random-service';
-import bigtable from '../lib/bigtable';
+import bigtable from '../lib/bigtable/bigtable-service';
 
 export default ({ config, db }) => {
 	let q = Router();

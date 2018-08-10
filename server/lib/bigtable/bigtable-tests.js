@@ -57,7 +57,7 @@ const getRowGreeting = row => {
       
       await table.create(options);
     }
-    
+
     const family = table.family(COLUMN_FAMILY_ID);
     console.log('family');
     console.log(family);
@@ -73,7 +73,7 @@ const getRowGreeting = row => {
         console.log(family2, apiResponse2);
     });
 
-
+    
     console.log('Write some greetings to the table');
     const greetings = ['Hello World!', 'Hello Bigtable!', 'Hello Node!'];
     const rowsToInsert = greetings.map((greeting, index) => ({
