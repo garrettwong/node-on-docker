@@ -24,10 +24,12 @@ function getRandomId() {
 
   return randomInt;
 }
+
 function getRandomName() {
   var randomId = getRandomId();
-  if (randomId === 1) return 'Mommy';
-  if (randomId === 5) return 'SeQi';else return 'Q' + randomId;
+  if (randomId === 1) return 'Papa';
+  if (randomId === 5) return 'SeQi';
+  else return 'Q' + randomId;
 }
 
 app.get('/', function (req, res) {

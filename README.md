@@ -1,64 +1,77 @@
 # Node.js Docker - Hello World
 
-Tutorial Reference:
+## Tutorial References
+
 - https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
 - https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 
-Pre-requisites:
+## Pre-requisites
+
 - docker 18.05 (download from docker site online)
 - kubectl 1.9.7 (download using gcloud components install kubectl)
+- node8+
 
-# Quickstart
-* Run Locally
-```javascript
-node server.js
+## Getting Started
+
+### Run Locally
+
+```bash
+npm install
+npm start
 open http://localhost:8080
 ```
-* Run via Docker
+
+### Run via Docker
+
 ```bash
 infrastructure/docker_run.sh
 ```
 
-* Deploy to GKE Cluster
+## Deploying to GKE
+
 ```bash
 # gcloud auth login --activate-service-account ${...}
 
-CLUSTER_NAME=nodedocker-cluster # fill this in with your GKE cluster name
+CLUSTER_NAME="gke-nodeondocker"
 gcloud container clusters get-credentials $CLUSTER_NAME
 infrastructure/gke/deploy_new_version.sh
 ```
 
-_Included below are notes that aren't necessary to run_
+## General Notes
 
-# Notes
+*List docker images*
+
 ```bash
 docker images
-docker run -p 49160:8080 -d garrettwong/nodedocker
+docker run -p 49160:8080 -d garrettwong/nodeondocker
 ```
 
-# Get container ID
-```bash
-$ docker ps
-```
-
-# Print app output
-```bash
-$ docker logs <container id>
-```
-
-# Example
-Running on http://localhost:8080
+*Get container ID*
 
 ```bash
-$ docker exec it <container id> /bin/bash
-$ open localhost:49160
+docker ps
 ```
 
+*Print app output*
 
-### On push to master, a trigger creation of a docker image via GCP Build Triggers
-### A build trigger has been added at the project path: cloud-build/builds
-### This will create an image in the gcr.io project container registry
 ```bash
-$ git push -u origin master
+docker logs <container id>
 ```
-test
+
+*Exec into a container*
+
+```bash
+docker exec it <container id> /bin/bash
+open localhost:49160
+```
+
+### Build Triggers
+
+On push to master, a trigger creation of a docker image via GCP Build Triggers.
+
+A build trigger has been added at the project path: cloud-build/builds
+This will create an image in the gcr.io project container registry
+
+```bash
+git push -u origin master
+```
