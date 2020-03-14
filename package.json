@@ -9,7 +9,6 @@
     "build": "babel src -s -D -d dist --presets es2015,stage-0",
     "start": "nodemon -w src --exec \"babel-node server --presets es2015,stage-0\"",
     "test": "eslint src",
-
     "server_bigtable_tests": "nodemon -w src --exec \"babel-node server_bigtable_tests --presets es2015,stage-0\""
   },
   "eslintConfig": {
@@ -28,6 +27,7 @@
   },
   "dependencies": {
     "@google-cloud/bigtable": "^0.15.0",
+    "@google-cloud/storage": "^1.7.0",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
     "cors": "^2.8.4",
