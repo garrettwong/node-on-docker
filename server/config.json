@@ -5,6 +5,6 @@
 	"bodyLimit": "100kb",
 	"corsHeaders": ["Link"],
 
-	"GCLOUD_PROJECT": "testproject-garrett",
+	"GCLOUD_PROJECT": "[YOUR_PROJECT_ID]",
 	"DATA_BACKEND": "datastore"
 }

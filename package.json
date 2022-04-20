@@ -2,7 +2,7 @@
   "name": "docker_web_app",
   "version": "1.0.0",
   "description": "Node.js on Docker",
-  "author": "Garrett Wong",
+  "author": "garrettdotnet",
   "main": "server.js",
   "scripts": {
     "build": "babel server -s -D -d dist",

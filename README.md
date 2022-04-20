@@ -24,6 +24,7 @@ open http://localhost:8080
 ### Run via Docker
 
 ```bash
+infrastructure/build.sh
 infrastructure/docker_run.sh
 ```
 
@@ -43,7 +44,7 @@ infrastructure/gke/deploy_new_version.sh
 
 ```bash
 docker images
-docker run -p 49160:8080 -d garrettwong/nodeondocker
+docker run -p 49160:8080 -d garrettdotnet/nodeondocker
 ```
 
 *Get container ID*

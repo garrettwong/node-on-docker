@@ -2,7 +2,7 @@
 
 # npm install --save @google-cloud/bigtable
 
-PROJECT_ID=testproject-garrett
+PROJECT_ID="[YOUR_PROJECT_ID]"
 INSTANCE=my-bigtable-instance
 CLUSTER_ID=
 CLUSTER_ZONE=us-west2-a

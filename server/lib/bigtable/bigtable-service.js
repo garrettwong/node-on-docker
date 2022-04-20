@@ -4,8 +4,6 @@
 
   Bigtable node.js reference: 
     https://github.com/googleapis/nodejs-bigtable
-
-  @author garrettwong
 */
 
 const Bigtable = require('@google-cloud/bigtable');
@@ -14,7 +12,7 @@ const TABLE_NAME = 'my-table2';
 const COLUMN_FAMILY_ID = 'cf3';
 const COLUMN_QUALIFIER = 'greeting';
 const INSTANCE_ID = 'my-bigtable-instance';
-const GCLOUD_PROJECT = 'testproject-garrett';
+const GCLOUD_PROJECT = '[YOUR_PROJECT_ID]';
 
 async function getTable() {
   var bigtableOptions = {
@@ -90,7 +88,7 @@ async function getRowByKey(key) {
 async function addRow_test() {
   let table = await getTable();
 
-  const greetings = ['Hello Garrett!', 'Hello Bigtable!', 'Hello Node!'];
+  const greetings = ['Hello World!', 'Hello Bigtable!', 'Hello Node!'];
   const rowsToInsert = greetings.map((greeting, index) => ({
     key: `greeting${index}`,
     data: {
